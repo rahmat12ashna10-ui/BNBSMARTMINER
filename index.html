@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BNBSMARTMINER</title>
+
+<style>
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:Arial,sans-serif;
+  background:#e8ffff;
+  color:#183b45;
+}
+header{
+  background:#073e49;
+  color:white;
+  padding:22px 12px;
+  text-align:center;
+}
+header h1{color:#ff70b7;margin:0}
+header p{margin-bottom:0}
+.container{
+  max-width:480px;
+  margin:20px auto;
+  padding:12px;
+}
+.card{
+  background:white;
+  padding:20px;
+  border-radius:16px;
+  margin-bottom:16px;
+  box-shadow:0 3px 12px #00000012;
+}
+h2{color:#ed55a2;font-size:20px}
+input,button{
+  width:100%;
+  padding:13px;
+  margin:7px 0;
+  border-radius:9px;
+  font-size:15px;
+}
+input{border:1px solid #cbdada}
+button{
+  background:#087e83;
+  color:white;
+  border:0;
+  font-weight:bold;
+  cursor:pointer;
+}
+.balance{
+  background:#073e49;
+  color:white;
+  text-align:center;
+}
+.balance h2{color:#ff80bd}
+.amount{font-size:30px;font-weight:bold}
+.notice{
+  background:#fff3cd;
+  color:#735500;
+  padding:12px;
+  border-radius:10px;
+  font-size:13px;
+}
+footer{text-align:center;padding:20px;font-size:12px}
+</style>
+</head>
+
+<body>
+<header>
+  <h1>BNBSMARTMINER</h1>
+  <p>Digital Mining Dashboard</p>
+</header>
+
+<main class="container">
+
+  <div class="notice">
+    DEMO MODE — This is a test website.
+    No real deposits, withdrawals or profits are enabled.
+  </div>
+
+  <section class="card">
+    <h2>Welcome</h2>
+    <p>Create an account or sign in to explore the dashboard.</p>
+    <input id="username" placeholder="Username">
+    <input id="pin" type="password" placeholder="PIN code">
+    <button onclick="demoLogin()">Login (Demo)</button>
+    <p id="message"></p>
+  </section>
+
+  <section class="card balance">
+    <h2>Test Balance</h2>
+    <div class="amount">0.00 BNB</div>
+    <p>Demo balance — not real funds</p>
+  </section>
+
+  <section class="card">
+    <h2>Mining Dashboard</h2>
+    <p>Mining status: <strong>Simulation only</strong></p>
+    <p>Daily reward: Not activated</p>
+    <button onclick="demoMining()">View Mining Status</button>
+    <p id="miningMessage"></p>
+  </section>
+
+  <section class="card">
+    <h2>Deposit</h2>
+    <p>Deposit service is not connected.</p>
+    <button onclick="alert('Demo only: no deposits accepted.')">
+      Deposit BNB
+    </button>
+  </section>
+
+  <section class="card">
+    <h2>Withdrawal</h2>
+    <p>Withdrawal service is not connected.</p>
+    <button onclick="alert('Demo only: withdrawals are disabled.')">
+      Request Withdrawal
+    </button>
+  </section>
+
+  <section class="card">
+    <h2>Transaction History</h2>
+    <p>No transactions recorded.</p>
+  </section>
+
+</main>
+
+<footer>
+  BNBSMARTMINER | Test Version
+</footer>
+
+<script>
+function demoLogin(){
+  const username=document.getElementById('username').value.trim();
+  const pin=document.getElementById('pin').value.trim();
+
+  if(!username || !pin){
+    document.getElementById('message').textContent=
+      'Please enter a username and PIN.';
+    return;
+  }
+
+  document.getElementById('message').textContent=
+    'Demo preview only. Secure account registration is not connected.';
+}
+
+function demoMining(){
+  document.getElementById('miningMessage').textContent=
+    'Mining is simulated. No real cryptocurrency is earned.';
+}
+</script>
+</body>
+</html>
